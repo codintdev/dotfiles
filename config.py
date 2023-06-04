@@ -63,7 +63,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 ]]
 
 groups = [Group(i) for i in [
-    "󰫰", "󰬹", "󰫱", "󱂈", "󰫻", "󰬁", ""
+    "  ", "  ", " 󰨞 ", "  ", "  ", "  ", "  ", "  ", "  "
 ]]
 
 for i,group in enumerate(groups):
@@ -80,18 +80,18 @@ tamano_barra_principal=20
 tamano_barra_pantalla_secundaria=20
 tamano_barra_pantalla_terciara=20
 tamano_fuente=9
-tamano_iconos=15
+tamano_iconos=12
 color_barra="#181818"
 color_activo="#ffffff"
 color_inactivo="#3C4048"
-color_border="#F08A5D"
+color_border="#ACBCFF"
 color_ip="#93BFCF"
 color_wlan="#F8F988"
 color_layout="#472183"
 color_battery="#F99417"
 color_fecha="#E14541"
-color_other_screen="#E8E2E2"
-color_tercery_screen="#65647C"
+color_other_screen="#181818"
+color_tercery_screen="#181818"
 fuente_predeterminada="Mononoki Nerd Font"
 
 def init_layout_conf_theme():
@@ -134,7 +134,7 @@ def separador():
 def powerline(fg, bg):
     return widget.TextBox(
         text="",
-        fontsize=41,
+        fontsize=60,
         padding=-4,
         foreground=fg,
         background=bg
@@ -150,6 +150,52 @@ def icon(text, fg, bg, fontsize=12):
 
 # ---------- Screen Primary ----------
 screens = [
+    Screen(
+        top=bar.Bar(
+            [
+                widget.GroupBox(
+                    active=color_activo,
+                    inactive=color_inactivo,
+                    font=fuente_predeterminada,
+                    fontsize=tamano_iconos,
+                    margin_y=3,
+                    margin_x=1,
+                    padding_y=1,
+                    padding_x=2,
+                    borderwidth=2,
+                    rounded=False,
+                    highlight_method='block',
+                    urgent_alert_method='block',
+                    #urgent_border=color_border,
+                    this_current_screen_border=color_border,
+                    this_screen_border=color_border,
+                    other_current_screen_border=color_other_screen,
+                    other_screen_border=color_tercery_screen,
+                    disable_drag=True
+                ),
+                separador(),
+                widget.Prompt(),
+                widget.WindowName(foreground=color_border, fontsize=10, padding=5),
+                powerline(color_wlan, color_barra),
+                icon("  ", color_barra, color_wlan),
+                widget.Net(background=color_wlan, foreground=color_barra),
+                powerline(color_layout, color_wlan),
+                widget.CurrentLayoutIcon(background=color_layout, scale=0.65),
+                widget.CurrentLayout(foreground="#FFFFFF", background=color_layout, padding=5),
+                powerline(color_battery, color_layout),
+                icon("   ", color_barra, color_battery),
+                widget.Battery(background=color_battery, foreground=color_barra),
+                powerline(color_fecha, color_battery),
+                icon("  ", color_barra, color_fecha),
+                widget.Clock(foreground=color_barra, background=color_fecha,format="%Y-%m-%d %a %I:%M %p"),
+                powerline(color_barra, color_fecha),
+                widget.Systray(background=color_barra, padding=5),
+            ],
+            tamano_barra_principal,
+            background=color_barra,
+        ),
+    ),
+    # ---------- Screen Secondary ----------
     Screen(
         top=bar.Bar(
             [
@@ -189,13 +235,12 @@ screens = [
                 icon("  ", color_barra, color_fecha),
                 widget.Clock(foreground=color_barra, background=color_fecha,format="%Y-%m-%d %a %I:%M %p"),
                 powerline(color_barra, color_fecha),
-                widget.Systray(background=color_barra, padding=5),
             ],
-            tamano_barra_principal,
+            tamano_barra_pantalla_secundaria,
             background=color_barra,
         ),
     ),
-    # ---------- Screen Secondary ----------
+    # ---------- Screen Tercera ----------
     Screen(
         top=bar.Bar(
             [
@@ -289,7 +334,7 @@ wmname = "LG3D"
 autostart = [
     "picom --no-vsync &",
     "nm-applet &",
-    "feh --bg-fill /home/codint/Imágenes/samurai.jpg",
+    "feh --bg-fill /home/codintdev/Escritorio/codintdev/wallpapers/cuphead.jpg",
 ]
 
 for x in autostart:
