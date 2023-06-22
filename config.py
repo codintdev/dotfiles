@@ -39,7 +39,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     ([mod], "c", lazy.spawn("code")),
 
-    ([mod], "Return", lazy.spawn("alacritty")),
+    ([mod], "Return", lazy.spawn("kitty")),
 
     ([mod], "m", lazy.spawn("rofi -show drun")),
 
@@ -77,14 +77,12 @@ for i,group in enumerate(groups):
 
 # ---------- Items ----------
 tamano_barra_principal=20
-tamano_barra_pantalla_secundaria=20
-tamano_barra_pantalla_terciara=20
 tamano_fuente=9
 tamano_iconos=12
 color_barra="#181818"
 color_activo="#ffffff"
 color_inactivo="#3C4048"
-color_border="#ACBCFF"
+color_border="#E84545"
 color_ip="#93BFCF"
 color_wlan="#F8F988"
 color_layout="#472183"
@@ -92,14 +90,14 @@ color_battery="#F99417"
 color_fecha="#E14541"
 color_other_screen="#181818"
 color_tercery_screen="#181818"
-fuente_predeterminada="Mononoki Nerd Font"
+fuente_predeterminada="Hack Nerd Font"
 
 def init_layout_conf_theme():
     return {
     'border_focus': color_border,
     'border_normal': color_barra,
     'border_width': 1,
-    'margin': 15
+    'margin': 5
     }
 layout_conf = init_layout_conf_theme()
 
@@ -166,6 +164,7 @@ screens = [
                     rounded=False,
                     highlight_method='block',
                     urgent_alert_method='block',
+                    active_highlight_color='active',
                     #urgent_border=color_border,
                     this_current_screen_border=color_border,
                     this_screen_border=color_border,
@@ -192,96 +191,6 @@ screens = [
                 widget.Systray(background=color_barra, padding=5),
             ],
             tamano_barra_principal,
-            background=color_barra,
-        ),
-    ),
-    # ---------- Screen Secondary ----------
-    Screen(
-        top=bar.Bar(
-            [
-                widget.GroupBox(
-                    active=color_activo,
-                    inactive=color_inactivo,
-                    font=fuente_predeterminada,
-                    fontsize=tamano_iconos,
-                    margin_y=3,
-                    margin_x=4,
-                    padding_y=1,
-                    padding_x=4,
-                    borderwidth=2,
-                    rounded=False,
-                    highlight_method='block',
-                    urgent_alert_method='block',
-                    #urgent_border=color_border,
-                    this_current_screen_border=color_border,
-                    this_screen_border=color_border,
-                    other_current_screen_border=color_other_screen,
-                    other_screen_border=color_tercery_screen,
-                    disable_drag=True
-                ),
-                separador(),
-                widget.Prompt(),
-                widget.WindowName(foreground=color_border, fontsize=10, padding=5),
-                powerline(color_wlan, color_barra),
-                icon("  ", color_barra, color_wlan),
-                widget.Net(background=color_wlan, foreground=color_barra),
-                powerline(color_layout, color_wlan),
-                widget.CurrentLayoutIcon(background=color_layout, scale=0.65),
-                widget.CurrentLayout(foreground="#FFFFFF", background=color_layout, padding=5),
-                powerline(color_battery, color_layout),
-                icon("   ", color_barra, color_battery),
-                widget.Battery(background=color_battery, foreground=color_barra),
-                powerline(color_fecha, color_battery),
-                icon("  ", color_barra, color_fecha),
-                widget.Clock(foreground=color_barra, background=color_fecha,format="%Y-%m-%d %a %I:%M %p"),
-                powerline(color_barra, color_fecha),
-            ],
-            tamano_barra_pantalla_secundaria,
-            background=color_barra,
-        ),
-    ),
-    # ---------- Screen Tercera ----------
-    Screen(
-        top=bar.Bar(
-            [
-                widget.GroupBox(
-                    active=color_activo,
-                    inactive=color_inactivo,
-                    font=fuente_predeterminada,
-                    fontsize=tamano_iconos,
-                    margin_y=3,
-                    margin_x=4,
-                    padding_y=1,
-                    padding_x=4,
-                    borderwidth=2,
-                    rounded=False,
-                    highlight_method='block',
-                    urgent_alert_method='block',
-                    #urgent_border=color_border,
-                    this_current_screen_border=color_border,
-                    this_screen_border=color_border,
-                    other_current_screen_border=color_other_screen,
-                    other_screen_border=color_tercery_screen,
-                    disable_drag=True
-                ),
-                separador(),
-                widget.Prompt(),
-                widget.WindowName(foreground=color_border, fontsize=10, padding=5),
-                powerline(color_wlan, color_barra),
-                icon("  ", color_barra, color_wlan),
-                widget.Net(background=color_wlan, foreground=color_barra),
-                powerline(color_layout, color_wlan),
-                widget.CurrentLayoutIcon(background=color_layout, scale=0.65),
-                widget.CurrentLayout(foreground="#FFFFFF", background=color_layout, padding=5),
-                powerline(color_battery, color_layout),
-                icon("   ", color_barra, color_battery),
-                widget.Battery(background=color_battery, foreground=color_barra),
-                powerline(color_fecha, color_battery),
-                icon("  ", color_barra, color_fecha),
-                widget.Clock(foreground=color_barra, background=color_fecha,format="%Y-%m-%d %a %I:%M %p"),
-                powerline(color_barra, color_fecha),
-            ],
-            tamano_barra_pantalla_secundaria,
             background=color_barra,
         ),
     ),
@@ -334,7 +243,7 @@ wmname = "LG3D"
 autostart = [
     "picom --no-vsync &",
     "nm-applet &",
-    "feh --bg-fill /home/codintdev/Escritorio/codintdev/wallpapers/cuphead.jpg",
+    "feh --bg-fill /home/codintdev/Desktop/wallpapers/cuphead.jpg",
 ]
 
 for x in autostart:
