@@ -1,22 +1,19 @@
 {
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "GitHub Dark Default",
     "editor.wordWrap": "on",
-    "editor.fontFamily": "'mononoki NF', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'Mononoki Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 14,
     "editor.lineHeight": 20,
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "Mononoki Nerd Font",
     "files.insertFinalNewline": true,
     "editor.bracketPairColorization.enabled": false,
-    "editor.rulers": [
-        120
-    ],
     "editor.tokenColorCustomizations": {
-        "[Night Owl]": {
-            "variables": "#ABB2BF",
+        "[GitHub Dark Default]": {
+            "variables": "#FFE79B",
             "textMateRules": [
                 {
                     "scope": [
@@ -33,12 +30,14 @@
     },
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
-        "[Night Owl]": {
+        "[GitHub Dark Default]": {
             "rules": {
-                "variable": "#ABB2BF",
-                "function": "#FDFDBD",
+                "variable": "#FFE79B",
+                "function": "#E76161",
                 "class": "#7FB77E"
             }
         }
-    }
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
 }
