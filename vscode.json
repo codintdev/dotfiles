@@ -1,7 +1,7 @@
 {
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorTheme": "Dracula",
     "editor.wordWrap": "on",
     "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 12,
@@ -12,7 +12,7 @@
     "files.insertFinalNewline": true,
     "editor.bracketPairColorization.enabled": false,
     "editor.tokenColorCustomizations": {
-        "[GitHub Dark Default]": {
+        "[Dracula]": {
             "variables": "#FFE79B",
             "textMateRules": [
                 {
@@ -30,7 +30,7 @@
     },
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
-        "[GitHub Dark Default]": {
+        "[Dracula]": {
             "rules": {
                 "variable": "#FFE79B",
                 "function": "#E76161",
