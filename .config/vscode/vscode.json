@@ -1,0 +1,43 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula",
+    "editor.wordWrap": "on",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 12,
+    "editor.lineHeight": 20,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "files.insertFinalNewline": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.tokenColorCustomizations": {
+        "[Dracula]": {
+            "variables": "#FFE79B",
+            "textMateRules": [
+                {
+                    "scope": [
+                        "keyword.operator.assignment.js",
+                        "meta.var.expr.js",
+                        "source.js",
+                    ],
+                    "settings": {
+                        "foreground": "#DD5353",
+                    }
+                }
+            ]
+        }
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "[Dracula]": {
+            "rules": {
+                "variable": "#FFE79B",
+                "function": "#E76161",
+                "class": "#7FB77E"
+            }
+        }
+    },
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
+}
