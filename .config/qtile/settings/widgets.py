@@ -1,6 +1,7 @@
 from libqtile import widget
 from .theme import colors
 
+
 def base(fg='text', bg='dark'): 
     return {
         'foreground': colors[fg],
@@ -29,13 +30,12 @@ def powerline(fg="light", bg="dark"):
         padding=-1
     )
 
-
 def workspaces(): 
     return [
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='JetBrainsMono Nerd Font',
+            font='Hack Nerd Font',
             fontsize=14,
             margin_y=4,
             margin_x=2,
@@ -55,7 +55,7 @@ def workspaces():
             disable_drag=True
         ),
         separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=0, padding=5),
+        widget.WindowName(**base(fg='focus'), fontsize=8, padding=5),
         separator(),
     ]
 
@@ -67,7 +67,7 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", text=' '),
+    icon(bg="color4", text=' '), # Icon: nf-fa-download
     
     widget.CheckUpdates(
         background=colors['color4'],
@@ -83,7 +83,7 @@ primary_widgets = [
 
     icon(bg="color3", text=' '), 
     
-    widget.Net(**base(bg='color3'), interface='enp1s0'),
+    widget.Net(**base(bg='color3'), interface='enp0s3'),
 
     powerline('color2', 'color3'),
 
@@ -123,7 +123,7 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'JetBrainsMono Nerd Font',
+    'font': 'Hack Nerd Font',
     'fontsize': 10,
     'padding': 1,
 }

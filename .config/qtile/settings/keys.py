@@ -1,5 +1,4 @@
 
-
 from libqtile.config import Key
 from libqtile.command import lazy
 
@@ -46,16 +45,16 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "d", lazy.spawn("rofi -show drun")),
+    ([mod], "m", lazy.spawn("rofi -show drun")),
 
     # Window Nav
-    ([mod, "shift"], "d", lazy.spawn("rofi -show")),
+    ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod, "shift"], "f", lazy.spawn("firejail /opt/firefox/firefox")),
+    ([mod], "b", lazy.spawn("google-chrome-stable")),
 
     # Terminal
-    ([mod], "Return", lazy.spawn("alacritty")),
+    ([mod], "Return", lazy.spawn("gnome-terminal")),
 
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),

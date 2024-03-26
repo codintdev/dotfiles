@@ -1,5 +1,4 @@
 
-
 from libqtile.config import Screen
 from libqtile import bar
 from libqtile.log_utils import logger
