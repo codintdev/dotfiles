@@ -1,4 +1,4 @@
-# DEDSEC
+# Codintdev:DEDSEC
 
 colors:
   # Default colors
@@ -34,7 +34,7 @@ font:
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    family: JetBrainsMono Nerd Font 
+    family: Hack Nerd Font 
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
@@ -45,7 +45,7 @@ font:
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    family: JetBrainsMono Nerd Font
+    family: Hack Nerd Font
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
@@ -56,17 +56,17 @@ font:
     # family: mononoki Nerd Font
     # family: agave Nerd Font
     # family: Caskaydia Cove Nerd Font
-    family: JetBrainsMono Nerd Font
+    family: Hack Nerd Font
     # family: Hurmit Nerd Font Mono
     # family: DaddyTimeMono Nerd Font
     # family: Iosevka NF
     # family: Hack NF
     # family: SpaceMono NF
     style: Regular
-  size: 9.0
+  size: 10.0
 
 window:
-  opacity: 0.95
+  opacity: 0.90
   padding:
     x: 2
     y: 2
