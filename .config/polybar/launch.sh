@@ -8,10 +8,6 @@ killall -q polybar
 ## Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-screens=$(xrandr | grep " connected " | wc -l)
-
-#if [[ $screens -eq 3 ]]; then
-
 ## Launch
 
 ## Left bar
@@ -24,8 +20,9 @@ polybar cuaternary -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/current.ini &
 polybar quinary -c ~/.config/polybar/current.ini &
 #polybar secondary -c ~/.config/polybar/current.ini &
-polybar sexto -c ~/.config/polybar/current.ini &
-polybar septimo -c ~/.config/polybar/current.ini &
+#polybar sexto -c ~/.config/polybar/current.ini &
+#polybar septimo -c ~/.config/polybar/current.ini &
 
 ## Center bar
 polybar primary -c ~/.config/polybar/workspace.ini &
+
