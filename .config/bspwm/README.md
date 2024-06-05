@@ -1,0 +1,1 @@
+![bspwm](../../assets/bspwm.png)
