@@ -1,3 +1,10 @@
+# Qtile Config File
+# http://www.qtile.org/
+
+# Antonio Sarosi
+# https://youtube.com/c/antoniosarosi
+# https://github.com/antoniosarosi/dotfiles
+
 
 from libqtile import hook
 

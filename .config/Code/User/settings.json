@@ -1,7 +1,7 @@
 {
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "One Dark Pro Darker",
     "editor.wordWrap": "on",
     "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 14,
@@ -16,7 +16,7 @@
     "breadcrumbs.enabled": false,
     "editor.cursorBlinking": "expand",
     "editor.tokenColorCustomizations": {
-        "[Night Owl]": {
+        "[One Dark Pro Darker]": {
             "variables": "#ebe2c5",
             "textMateRules": [
                 {
@@ -34,7 +34,7 @@
     },
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
-        "[Night Owl]": {
+        "[One Dark Pro Darker]": {
             "rules": {
                 "variable": "#ebe2c5",
                 //"function": "#E76161",
@@ -42,6 +42,6 @@
             }
         }
     },
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "liveServer.settings.donotShowInfoMsg": true
 }

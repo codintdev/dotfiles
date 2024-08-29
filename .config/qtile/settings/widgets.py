@@ -1,17 +1,14 @@
 from libqtile import widget
 from .theme import colors
 
-
 def base(fg='text', bg='dark'): 
     return {
         'foreground': colors[fg],
         'background': colors[bg]
     }
 
-
 def separator():
     return widget.Sep(**base(), linewidth=0, padding=5)
-
 
 def icon(fg='text', bg='dark', fontsize=12, text="?"):
     return widget.TextBox(
@@ -21,13 +18,12 @@ def icon(fg='text', bg='dark', fontsize=12, text="?"):
         padding=3
     )
 
-
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="",
+        text="", # Icon: nf-oct-triangle_left
         fontsize=55,
-        padding=-1
+        padding=-2
     )
 
 def workspaces(): 
@@ -41,7 +37,7 @@ def workspaces():
             margin_x=2,
             padding_y=1,
             padding_x=2,
-            borderwidth=0,
+            borderwidth=1,
             active=colors['active'],
             inactive=colors['inactive'],
             rounded=False,
@@ -81,9 +77,9 @@ primary_widgets = [
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '), 
+    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
     
-    widget.Net(**base(bg='color3'), interface='enp0s3'),
+    widget.Net(**base(bg='color3'), interface='eth0'),
 
     powerline('color2', 'color3'),
 
@@ -93,7 +89,7 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=14, text=' '),
+    icon(bg="color1", fontsize=14, text=' '), # Icon: nf-mdi-calendar_clock
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
@@ -114,8 +110,6 @@ secondary_widgets = [
     widget.CurrentLayout(**base(bg='color1'), padding=5),
 
     powerline('color2', 'color1'),
-
-    icon(bg="color2", fontsize=14, text=' '),
 
     widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
 

@@ -1,7 +1,5 @@
-
 from libqtile.config import Key
-from libqtile.command import lazy
-
+from libqtile.lazy import lazy
 
 mod = "mod4"
 
@@ -42,24 +40,30 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     ([mod, "control"], "q", lazy.shutdown()),
     ([mod], "r", lazy.spawncmd()),
 
+    # Lock the system
+    ([mod], "l", lazy.spawn("/home/codintdev/i3lock-fancy/i3lock-fancy -f Hack-Nerd-Font-Regular -t FBI")),
+
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "m", lazy.spawn("rofi -show drun")),
+    ([mod], "d", lazy.spawn("rofi -show drun")),
 
     # Window Nav
-    ([mod, "shift"], "m", lazy.spawn("rofi -show")),
+    ([mod, "shift"], "d", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "b", lazy.spawn("google-chrome-stable")),
+    ([mod], "f", lazy.spawn("brave-browser")),
+    ([mod, "shift"], "f", lazy.spawn("firefox")),
+
+    # File Explorer
+    ([mod], "e", lazy.spawn("nautilus")),
 
     # Terminal
-    ([mod], "Return", lazy.spawn("gnome-terminal")),
+    ([mod], "Return", lazy.spawn("kitty")),
+    ([mod, "shift"], "Return", lazy.spawn("alacritty")),
 
     # Screenshot
-    ([mod], "s", lazy.spawn("scrot")),
-    ([mod, "shift"], "s", lazy.spawn("scrot -s")),
-
+    ([mod], "s", lazy.spawn("flameshot gui")),
     # ------------ Hardware Configs ------------
 
     # Volume

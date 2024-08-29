@@ -1,13 +1,6 @@
-# Antonio Sarosi
-# https://youtube.com/c/antoniosarosi
-# https://github.com/antoniosarosi/dotfiles
-
 from libqtile import layout
 from libqtile.config import Match
 from .theme import colors
-
-# Layouts and layout rules
-
 
 layout_conf = {
     'border_focus': colors['focus'][0],
@@ -16,8 +9,8 @@ layout_conf = {
 }
 
 layouts = [
-    layout.MonadTall(**layout_conf),
     layout.Max(),
+    layout.MonadTall(**layout_conf),
     layout.MonadWide(**layout_conf),
     #layout.Bsp(**layout_conf),
     #layout.Matrix(columns=2, **layout_conf),
