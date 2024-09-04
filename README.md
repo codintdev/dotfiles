@@ -6,3 +6,14 @@ Configuration files for the different desktop environments, personal configurati
 
 # QTILE
 ![qtile](.screenshots/qtile.png)
+
+# /usr/share/icons/default/index.theme
+```bash
+[Icon Theme]
+Inherits = Bibata-Modern-Ice
+```
+
+# ~/.config/gtk-3.0/settings.ini
+```bash
+gtk-cursor-theme-name = Bibata-Modern-Ice
+```

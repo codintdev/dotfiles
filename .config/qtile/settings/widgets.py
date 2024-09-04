@@ -1,5 +1,16 @@
-from libqtile import widget
-from .theme import colors
+#############################
+from libqtile import widget #
+from .theme import colors   #
+#############################
+
+# Función para verificar la IP
+def get_ip():
+    import subprocess
+    try:
+        ip = subprocess.check_output("hostname -I | awk '{print $1}'", shell=True).decode("utf-8").strip()
+        return ip
+    except Exception:
+        return "No IP"
 
 def base(fg='text', bg='dark'): 
     return {
@@ -10,7 +21,7 @@ def base(fg='text', bg='dark'):
 def separator():
     return widget.Sep(**base(), linewidth=0, padding=5)
 
-def icon(fg='text', bg='dark', fontsize=12, text="?"):
+def icon(fg='text', bg='dark', fontsize=14, text="?"):
     return widget.TextBox(
         **base(fg, bg),
         fontsize=fontsize,
@@ -21,8 +32,8 @@ def icon(fg='text', bg='dark', fontsize=12, text="?"):
 def powerline(fg="light", bg="dark"):
     return widget.TextBox(
         **base(fg, bg),
-        text="", # Icon: nf-oct-triangle_left
-        fontsize=55,
+        text="",
+        fontsize=37,
         padding=-2
     )
 
@@ -31,12 +42,12 @@ def workspaces():
         separator(),
         widget.GroupBox(
             **base(fg='light'),
-            font='Hack Nerd Font',
-            fontsize=14,
-            margin_y=4,
-            margin_x=2,
-            padding_y=1,
-            padding_x=2,
+            font='UbuntuMono Nerd Font',
+            fontsize=17,
+            margin_y=3,
+            margin_x=0,
+            padding_y=8,
+            padding_x=5,
             borderwidth=1,
             active=colors['active'],
             inactive=colors['inactive'],
@@ -51,7 +62,7 @@ def workspaces():
             disable_drag=True
         ),
         separator(),
-        widget.WindowName(**base(fg='focus'), fontsize=8, padding=5),
+        widget.WindowName(**base(fg='focus'), fontsize=10, padding=5),
         separator(),
     ]
 
@@ -63,23 +74,26 @@ primary_widgets = [
 
     powerline('color4', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
+    icon(bg="color4", text='󰩠 '),
+    # IP
+    widget.GenPollText(func=get_ip, update_interval=10, fontsize=14, foreground="#ffffff", background=colors['color4']),
     
-    widget.CheckUpdates(
-        background=colors['color4'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
-        no_update_string='0',
-        display_format='{updates}',
-        update_interval=1800,
-        custom_command='checkupdates',
-    ),
+    # Widget de las actualizaciones
+    # widget.CheckUpdates(
+    #     background=colors['color4'],
+    #     colour_have_updates=colors['text'],
+    #     colour_no_updates=colors['text'],
+    #     no_update_string='0',
+    #     display_format='{updates}',
+    #     update_interval=1800,
+    #     custom_command='checkupdates',
+    # ),
 
     powerline('color3', 'color4'),
 
-    icon(bg="color3", text=' '),  # Icon: nf-fa-feed
+    icon(bg="color3", text='󱛆 '),
     
-    widget.Net(**base(bg='color3'), interface='eth0'),
+    widget.Net(**base(bg='color3'), interface='wlan0'),
 
     powerline('color2', 'color3'),
 
@@ -89,13 +103,14 @@ primary_widgets = [
 
     powerline('color1', 'color2'),
 
-    icon(bg="color1", fontsize=14, text=' '), # Icon: nf-mdi-calendar_clock
+    icon(bg="color1", fontsize=15, text=' '), # Icon: nf-mdi-calendar_clock
 
     widget.Clock(**base(bg='color1'), format='%d/%m/%Y - %H:%M '),
 
     powerline('dark', 'color1'),
 
     widget.Systray(background=colors['dark'], padding=5),
+
 ]
 
 secondary_widgets = [
@@ -117,8 +132,8 @@ secondary_widgets = [
 ]
 
 widget_defaults = {
-    'font': 'Hack Nerd Font',
-    'fontsize': 10,
+    'font': 'UbuntuMono Nerd Font',
+    'fontsize': 12,
     'padding': 1,
 }
 extension_defaults = widget_defaults.copy()

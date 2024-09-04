@@ -45,10 +45,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # ------------ App Configs ------------
 
-    # Menu
+    # Menu apps
     ([mod], "d", lazy.spawn("rofi -show drun")),
 
-    # Window Nav
+    # Window Navigator
     ([mod, "shift"], "d", lazy.spawn("rofi -show")),
 
     # Browser
@@ -64,6 +64,10 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Screenshot
     ([mod], "s", lazy.spawn("flameshot gui")),
+
+    # Obsidian
+    ([mod], "o", lazy.spawn("obsidian")),
+
     # ------------ Hardware Configs ------------
 
     # Volume

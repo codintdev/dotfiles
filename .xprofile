@@ -1,0 +1,4 @@
+setxkbmap es &
+nm-applet &
+volumeicon &
+cbatticon &
