@@ -5,7 +5,7 @@ Configuration files for the different desktop environments, personal configurati
 ![bspwn](.screenshots/bspwm.png)
 
 # QTILE
-![qtile](.screenshots/qtile.png)
+![qtile](.screenshots/qtile_config.png)
 
 # Configuration
 ## Install qtile in distribution debian
