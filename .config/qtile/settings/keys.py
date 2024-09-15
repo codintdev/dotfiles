@@ -53,7 +53,7 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Browser
     ([mod], "f", lazy.spawn("brave-browser")),
-    ([mod, "shift"], "f", lazy.spawn("firefox")),
+    ([mod, "shift"], "b", lazy.spawn("firefox")),
 
     # File Explorer
     ([mod], "e", lazy.spawn("nautilus")),
