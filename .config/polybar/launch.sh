@@ -18,10 +18,10 @@ polybar cuaternary -c ~/.config/polybar/current.ini &
 ## Right bar
 #polybar top -c ~/.config/polybar/current.ini &
 polybar primary -c ~/.config/polybar/current.ini &
-polybar quinary -c ~/.config/polybar/current.ini &
+#polybar quinary -c ~/.config/polybar/current.ini &
 #polybar secondary -c ~/.config/polybar/current.ini &
-#polybar sexto -c ~/.config/polybar/current.ini &
-#polybar septimo -c ~/.config/polybar/current.ini &
+polybar sexto -c ~/.config/polybar/current.ini &
+polybar septimo -c ~/.config/polybar/current.ini &
 
 ## Center bar
 polybar primary -c ~/.config/polybar/workspace.ini &

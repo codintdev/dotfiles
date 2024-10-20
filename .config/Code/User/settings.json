@@ -1,10 +1,11 @@
 {
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Night Owl",
+    "workbench.colorTheme": "Nord Wave",
     "editor.wordWrap": "on",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontSize": 14,
+    "editor.fontFamily": "'Cascadia Code PL', 'JetBrains Mono NL', 'Hack Nerd Font'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
     "editor.lineHeight": 20,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.fontSize": 12,
@@ -12,13 +13,15 @@
     "files.insertFinalNewline": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.stickyScroll.enabled": true,
-    "editor.linkedEditing": true,
+    //"editor.linkedEditing": true,
     "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "right",
     "editor.cursorBlinking": "expand",
     "editor.cursorSmoothCaretAnimation": "on",
     "editor.tokenColorCustomizations": {
-        "[Night Owl]": {
-            "variables": "#ebe2c5",
+        "[Nord Wave]": {
+            //"variables": "#ebe2c5",
             "textMateRules": [
                 {
                     "scope": [
@@ -35,9 +38,9 @@
     },
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
-        "[Night Owl]": {
+        "[Nord Wave]": {
             "rules": {
-                "variable": "#ebe2c5",
+                //"variable": "#ebe2c5",
                 //"function": "#E76161",
                 //"class": "#7FB77E"
             }
